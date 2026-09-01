@@ -1,0 +1,21 @@
+name: cs-project-docker
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - openjdk=21
+  - gcc
+  - gxx
+  - make
+  - cmake
+  - ninja
+  - gdb
+  - git
+  - curl
+  - wget
+  - vim
+  - nano
+  - tmux
+  - pip:
+      - openai

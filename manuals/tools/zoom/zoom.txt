@@ -1,0 +1,189 @@
+-----------------------------------------------------------
+
+share screen
+/images/zoom/i-0.jpeg
+(only check share sound if we were to watch a video together)
+
+give mouse/keyboard control to - during screen share
+/images/zoom/i-1.jpeg
+
+annotate write on the screen
+/images/zoom/i-2.jpeg
+
+chat and share files, urls, code, etc
+/images/zoom/i-3.jpeg
+
+open the meeting chat while sharing the screen
+    so i can share files, urls, code, etc
+/images/zoom/i-4.jpeg
+
+
+
+
+
+
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+
+zoom settings
+
+-----------------------------------------------------------
+
+video and effects -
+
+video
+camera select
+hd, original raio, mirror my video preview check
+
+appearance
+portrait lighting on
+
+virtual backgrounds
+none or space
+
+-----------------------------------------------------------
+
+audio -
+
+speaker
+same as system select
+
+microphone
+same as system select
+
+microphone modes
+noise removal (default)
+background noise suppressions auto
+
+headset
+automatically sync headset buttons on
+sync buttons on airpods check
+
+advanced
+echo cancellation auto
+
+-----------------------------------------------------------
+
+notifications and sounds
+
+default setting
+
+-----------------------------------------------------------
+
+meetings and webinars -
+
+join experience
+when joining meetings and webinars
+show video preview first on
+keep my camera off on
+keep my microphone muted on
+automatically connect to computer audio on
+auto-open selected app
+none
+
+in-meeting and in-webinar experience
+display
+meeting window view
+single window with tabs
+keep participant names visible on
+show meeting timer on
+show participant profile pictures in chat on
+
+controls
+keep meeting controls visible on
+press and hold space key to temporarily unmute on
+automatically copy invite link to clipboard on
+
+my video
+show me as an active speaker when i talk
+stop audio and video when computer locks on
+
+participant video
+show non-video participants on
+maximum participants per screen 25 participants
+
+reactions
+show reactions above toolbar on
+animate emojis on
+
+leave experience
+nothing on
+
+advanced - use hardware acceleration for
+receiving video on
+sending video on
+
+-----------------------------------------------------------
+
+recording -
+
+local recording storage
+storage location
+set storage location path
+
+recording preferences
+in my recordings:
+show participants names on
+include timestamp on
+record vidoe during screen sharing on
+show video and screen share side-by-side check
+
+advanced
+record separate participant audio files on
+optimize for third-party video editors on
+
+
+-----------------------------------------------------------
+
+share screen -
+
+when others share
+windwo size when viewing a shared screen
+maintain current size check
+scale-to-fit content on
+
+when i share
+windows shared from an application
+choose individual windows check
+show green border around my shared content on
+
+share button behavior
+share button behavior in meetings
+preview available content check
+share button behavior in zoom rooms
+preview available content
+
+advanced
+screen capture mode auto
+used hardware acceleration for video share on
+
+-----------------------------------------------------------
+
+team chat -
+default setting
+
+-----------------------------------------------------------
+
+accessibility -
+default setting
+
+-----------------------------------------------------------
+
+keyboard shortcuts -
+default setting
+
+-----------------------------------------------------------
+
+statistics -
+default setting
+
+-----------------------------------------------------------
+
+my account -
+default setting
+
+-----------------------------------------------------------
+
+
+

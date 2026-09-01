@@ -1,0 +1,151 @@
+notes
+
+zoom screen share - administrator access, windows os level notifications, etc are not accessible
+
+teamviewer screen share - administrator access, windows os level notifications, etc are accessible -
+    i download teamviewer - login with yoon.cs.tutor -
+    download teamviewer -
+    i click sessions -  new sessions - start the new session -
+    i share the access url and session id -
+    access the session by using access url and chrome or session id and teamviewer
+
+screen capture share on windows -
+    command + shift + 4
+
+--------------------------------------------
+
+mac onboarding
+
+0 terminal open
+1 zoom install
+cd ~/Desktop
+curl -L -o zoom.pkg "https://zoom.us/client/latest/Zoom.pkg"
+open zoom.pkg
+open -a "zoom.us"
+2 i share a zoom link
+3 enter the zoom room
+4 share screen - share zoom windows - share toolbars and notifications check
+5 share mouse control and clip board
+6 chrome install
+cd ~/Desktop
+curl -L -o googlechrome.dmg "https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg"
+open googlechrome.dmg
+open -a "Google Chrome"
+7 teamviewer setup - manual at the top
+cd ~/Desktop
+curl -L -o teamviewer.dmg "https://download.teamviewer.com/download/TeamViewer.dmg"
+open teamviewer.dmg
+open -a "TeamViewer"
+8 install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+9 install git, gh, vim, vs-code, and docker
+brew install git gh vim
+brew install --cask visual-studio-code docker-desktop
+10 installation integrity check
+brew --version
+git --version
+gh --version
+vim --version
+code --version
+docker --version
+docker compose version
+11 create a folder at an adequate directory - pwd ls cd mkdir rmdir rm
+12 github clone onboarding from the folder
+cd [folder path]
+git clone https://github.com/cs-yoon-ai/onboarding-cross
+13 docker start
+docker desktop start
+docker desktop restart
+docker desktop status
+
+14 vs-code open the cloned onboarding-cross folder
+(command (or control) + shift + n - new vs-code window open)
+15 vs-code extensions local install - command (or control) + shift + x
+docker
+dev containers
+container tools
+live share
+remote development
+16 command (or control) + shift + p
+17 dev containers: reopen in container
+18 vs code will reopen using the container - click ⓘ connecting to dev container (show log)
+19 note that all python, c, and java are managed by conda in docker
+20 docker container inside test
+pwd
+ls
+conda info --envs
+which python
+python --version
+which javac
+javac -version
+which gcc
+gcc --version
+which gdb
+gdb --version
+git --version
+gh --version
+apt install vim
+pip install requests
+wget https://www.google.com
+curl https://www.github.com
+(
+code --install-extension ms-vscode.cpptools@1.33.4 --force
+command (or control) + shift + p
+developer: reload window
+) <-- fixes vs code debugger problem
+
+21 vs-code - file - autosave - click
+22 command (or control) + shift + p
+23 live share: start collaboration session (share)
+24 sign in when prompted
+25 command (or control) + shift + p
+26 live share: copy collaboration link
+27 share the link through zoom chat
+28 chrome paste url
+29 open in visual studio desktop
+30 command (or control) + shift + p
+31 live share: share terminal - read write
+
+python program test
+0 open a python file
+1 command (or control) + shift + p
+2 python: select interpreter
+3 choose python 3.11.15 (cs-project-docker) /opt/conda/envs/cs-project-docker/bin/python
+4 run python click the ▷ button at the top right
+5 debug pyton - set break points - command (or control) + shift + d -
+    click run and debug -
+    select appropriately
+
+ollama llm test
+0 /ai/chat-ollama-openai.py - manual at the bottom of the python program
+(both dockers must be active to run chat-ollama-openai.py)
+
+java program test
+0 open a java file
+1 let vs-code automatically load java extension specified at .devcontainer/devcontainer.json
+2 run java at the top right ▷
+3 debug java at the top right ▷ - set breakpoints
+
+c program test
+0 open a c file (to debug, compile and run with -g)
+1 from the root of the project
+mkdir -p c/c-executables
+2 gcc -g c/hello-world-for.c -o c/c-executables/hello-world-for
+./c/c-executables/hello-world-for
+3 debug - set breakpoints -
+       command (or control) + shift + d -
+       run and debug ▷ c/c++:... ∨ - click ∨ -
+       choose c/c++:gcc build and debug active file -
+       click run and debug ▷
+
+github-git
+0 github setup
+/manuals/github-git/github-ssh-key/github-ssh-key-mac.txt
+1 git initial commit or continuous development
+/manuals/github-git/github-git-workflows-cross.txt
+
+vs-code docker info
+0 vs-code - to rebuild docker
+1 command (or control) + shift + p
+2 dev containers: rebuild container
+

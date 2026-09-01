@@ -1,0 +1,12 @@
+ssh enable
+settings - general - sharing - screen sharing - toggle on remote login -
+    ! - toggle on allow full disk access ...
+
+ssh local address
+settings - general - sharing - local hostname - use the local hostname to ssh
+
+
+screen sharing
+settings - general - sharing - screen sharing - toggle on with default setting -
+    command + space - screen sharing.app
+

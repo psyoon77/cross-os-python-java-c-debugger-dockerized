@@ -1,0 +1,36 @@
+The git remote for a codespace is the github repository from which
+the codespace was opened.
+
+--------------------------------------------------------
+
+clone
+git clone [url of github repository]
+
+no changes after initial clone - the github repository advance
+git checkout main
+git pull --ff-only origin main
+
+check where we will be pushing
+git remote -v
+git branch --show-current
+gh auth status
+
+initial
+git init
+git add -A
+git commit -m "[commit message]"
+gh repo create [repo-name] --private --source=. --remote=origin --push
+(gh repo create [repo-name] --public --source=. --remote=origin --push)
+
+continuous
+git checkout -b [name-of-a-new-branch]
+git add -A
+git commit -m "[commit message]"
+git push -u origin [name-of-a-new-branch]
+gh pr create --base main --head [name-of-a-new-branch] --title "[pr title]" --body "[pr body message]"
+gh pr merge --merge --delete-branch
+git checkout main
+git pull origin main
+
+other cases
+/manuals/github-git/github-git-workflows/github-git-workflows-cross.txt

@@ -1,0 +1,29 @@
+{
+  "name": "onboarding-linux-local",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "cs-project-docker",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "overrideCommand": false,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-toolsai.jupyter",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vsliveshare.vsliveshare",
+        "vscjava.vscode-java-pack"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/envs/cs-project-docker/bin/python",
+        "python.terminal.activateEnvironment": true,
+        "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+        "cmake.configureOnOpen": false,
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}

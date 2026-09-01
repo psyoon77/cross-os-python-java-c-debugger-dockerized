@@ -1,0 +1,13 @@
+open vs-code
+command (or control) + shift + x -
+    install remote ssh and dev container by microsoft
+make sure to have the credential of the remote server to be in /.ssh/config
+command (or control) + shift + p -
+    remote ssh add new ssh host - enter ssh [host from /.ssh/config] -
+    select /.ssh/config as the config file
+command (or control) + shift + p -
+    remote ssh connect to host - select the host from /.ssh/config -
+    enter the ssh key password in the input of at the top middle of the ide -
+    open the project
+command (or control) + shift + p -
+    dev containers reopen in containers

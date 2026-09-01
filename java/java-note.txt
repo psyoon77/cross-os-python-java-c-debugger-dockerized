@@ -1,0 +1,76 @@
+--------------------------------------------------------------
+
+to run
+javac HelloWorldFor.java
+java HelloWorldFor
+
+HelloWorldFor.java -  human-written code
+HelloWorldFor.class - compiled bytecode for the JVM
+
+JVM:
+The runtime engine that executes Java bytecode that runs .class files
+
+JDK:
+The developer package that includes javac (compiler), debugger tools, java (launcher), etc.
+
+--------------------------------------------------------------
+
+intellij jetbrains - debugger and project setting
+
+0 open the project with the root as onboarding-[mac, ms, or linux]
+1 right click the folder java - mark directory as - sources root
+2 file - project structure - project settings - project -
+    onboarding-[mac, ms, or linux]/images/java-images/i-0.jpeg
+    (note that compiler output: path should be out side of the folder java, which is set to be the sources root)
+3 run - edit configuration - + - add new configuration - application -
+    onboarding-[mac, ms, or linux]/images/java-images/i-1.jpeg
+4 set breakpoints on the .java file
+5 onboarding-[mac, ms, or linux]/images/java-images/i-2.jpeg
+6 onboarding-[mac, ms, or linux]/images/java-images/i-3.jpeg
+
++
+open intellij from docker for easier debugging
+
+--------------------------------------------------------------
+
+codespace github - debugger and project setting
+
+0 open the java file - set breakpoints - run the debugger -
+    onboarding-[mac, ms, or linux]/images/java-images/i-10.jpeg
+    (note that the java extensions for the visual studio of codespace was included from .devcontainer, so let code space load the development environment for java)
+1 onboarding-[mac, ms, or linux]/images/java-images/i-11.jpeg
+
+--------------------------------------------------------------
+
+vs-code microsoft + docker - debugger and project setting
+
+0 open the project in vs code
+1 make sure that
+    onboarding-mac/.devcontainer/devcontainer.json exists
+2 command (or control) + shift + x
+3 type dev containers and remote development extensions by microsoft
+4 command (or control) + shift + p
+5 type dev containers: reopen in container
+6 vs code will reopen using the container
+7 note that all python, c, and java are managed by conda
+8 inside the container
+pwd
+ls
+which python
+python --version
+which javac
+javac -version
+which gcc
+gcc --version
+which gdb
+gdb --version
+9 to rebuild docker after changes
+10 command (or control) + shift + p
+11 type dev containers: rebuild container
+or dev containers: rebuild and reopen in container
+
+java
+
+0 open a java file
+1 let vs code load java extension specified at .devcontainer/devcontainer.json
+2 click run java or debug java at the top right

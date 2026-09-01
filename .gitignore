@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Conda
+.conda/
+conda-meta/
+
+# macOS
+.DS_Store
+
+# Editors / IDEs
+.idea/
+.vscode/
+
+# Environments / secrets
+.env
+.env.*
+*.log
+
+# Build outputs
+dist/
+build/
+out/
+*.o
+*.obj
+*.exe
+*.out
+*.class
+
+# Keep folders, ignore contents
+java-out/*
+!java-out/
+!java-out/.gitkeep
+
+c/c-executables/*
+!c/c-executables/
+!c/c-executables/.gitkeep
+
+# CMake / CLion
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+CTestTestfile.cmake
+cmake_install.cmake
+compile_commands.json
+Makefile
+
+# Misc
+*.swp
+*.swo

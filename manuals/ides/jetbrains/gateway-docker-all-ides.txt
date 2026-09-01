@@ -1,0 +1,12 @@
+all jetbrains ides
+
+mac local docker
+
+0 turn on docker application
+1 gateway - connections - dev containers - new dev container -
+      from local project - Docker choose and configure - choose ide - set path to devcontainer.json -
+      unveil hidden files and folders command (or control) + shift + . -
+      build container and continue
+
+
+remote gateway docker is flaky - use vs code

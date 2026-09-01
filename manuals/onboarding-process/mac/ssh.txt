@@ -1,0 +1,3 @@
+
+
+settings - general - sharing -  advanced - remote login - i - allow full disk access

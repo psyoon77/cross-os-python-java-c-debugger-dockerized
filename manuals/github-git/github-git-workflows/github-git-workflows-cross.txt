@@ -1,0 +1,141 @@
+prerequisites
+
+linux
+sudo apt update
+sudo apt install -y git gh vim
+
+mac
+terminal
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install git gh vim
+
+windows
+command prompt as administrator - right click
+winget install --id Git.Git -e --source winget
+winget install --id GitHub.cli -e --source winget
+winget install --id Microsoft.PowerShell -e --source winget
+
+codepsace - linux
+sudo apt update
+sudo apt install -y git gh vim
+
+----------------------------------------------------------------------------------------------
+
+initial
+
+(initial init, commit, github repository creation, and push)
+/manuals/github-git/github-ssh-key/github-ssh-key-[os type].txt <-- prerequisite
+gh auth status
+git init
+git add -A
+git commit -m "[commit message]"
+gh repo create [repo-name] --private --source=. --remote=origin --push
+(gh repo create [repo-name] --public --source=. --remote=origin --push)
+
+
+(initial clone)
+git clone [url of github repository]
+
+----------------------------------------------------------------------------------------------
+
+continuous development
+
+-------------------------------------------
+
+(no changes after initial clone - the github repository advance)
+git checkout main
+git pull --ff-only origin main
+
+-------------------------------------------
+
+(github main and local are identical - i advance locally from there)
+git checkout main
+git pull –ff-only origin main
+git checkout -b [name-of-new-branch]
+(**** develop from here *****)
+git add -A
+git commit -m "[commit message]"
+git push -u origin [name-of-new-branch]
+gh pr create –base main –head [name-of-new-branch] –title "[pr title]" –body "[pr body message]"
+gh pr merge [name-of-new-branch] –squash –delete-branch
+(gh pr merge [name-of-new-branch] –merge –delete-branch)
+git checkout main
+git pull –ff-only origin main
+
+-------------------------------------------
+
+(github main advanced over night - no local changes)
+git checkout main
+git pull –ff-only origin main
+git checkout -b [name-of-new-branch]
+(**** develop from here *****)
+git add -A
+git commit -m "[commit message]"
+git push -u origin [name-of-new-branch]
+gh pr create –base main –head [name-of-new-branch] –title "[pr title]" –body "[pr body message]"
+gh pr merge [name-of-new-branch] –squash –delete-branch
+(gh pr merge [name-of-new-branch] –merge –delete-branch)
+git checkout main
+git pull –ff-only origin main
+
+-------------------------------------------
+
+(github main did not change - i have conflicting local changes)
+(***** case 0 - local changes are disposable *****)
+git checkout main
+git reset –hard
+git checkout -b [name-of-new-branch]
+(***** develop from here *****)
+(***** case 1 - preserve local changes *****)
+git checkout -b [name-of-new-branch]
+(***** resolve conflicts locally *****)
+git add -A
+git commit -m "[commit message]"
+git push -u origin [name-of-new-branch]
+gh pr create –base main –head [name-of-new-branch] –title “[pr title]” –body “[pr body message]”
+gh pr merge [name-of-new-branch] –squash –delete-branch
+(gh pr merge [name-of-new-branch] –merge –delete-branch)
+git checkout main
+git pull –ff-only origin main
+
+-------------------------------------------
+
+(github main advanced - i have local changes)
+git checkout main
+git stash -u
+git pull –ff-only origin main
+git checkout -b [name-of-new-branch]
+git stash pop
+
+(***** case 0 - conflicts during git stash pop *****)
+(***** resolve conflicts *****)
+(***** develop from here *****)
+git add -A
+git commit -m "[commit message]"
+git push -u origin [name-of-new-branch]
+gh pr create –base main –head [name-of-new-branch] –title "[pr title]" –body "[pr body message]"
+gh pr merge [name-of-new-branch] –squash –delete-branch
+(gh pr merge [name-of-new-branch] –merge –delete-branch)
+
+(***** case 1 - no conflict - no new github changes or no conflicting lines of code between github main and local *****)
+gh pr merge [name-of-new-branch] –squash –delete-branch
+(gh pr merge [name-of-new-branch] –merge –delete-branch)
+git checkout main
+git pull –ff-only origin main
+
+(***** case 2 - conflicts - github main advanced again, or conflicting lines of code exist between github main and local )
+git checkout main
+git pull –ff-only origin main
+git checkout [name-of-new-branch]
+git rebase main
+( resolve conflicts *****)
+git add -A
+git rebase –continue
+git push –force-with-lease
+gh pr merge [name-of-new-branch] –squash –delete-branch
+(gh pr merge [name-of-new-branch] –merge –delete-branch)
+git checkout main
+git pull –ff-only origin main
+
+-------------------------------------------
+

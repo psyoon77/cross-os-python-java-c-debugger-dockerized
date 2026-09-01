@@ -1,0 +1,9 @@
+
+
+1 find the windows pc's internal ip address and port
+2 dhcp reservation from router of the ip address - preferably same
+3 install and enable openssh server
+4 start sshd and set it to automatic
+5 open firewall for port 22
+6 create local admin user for ssh
+7 ssh [user name]]@[ip address] -p [port number]

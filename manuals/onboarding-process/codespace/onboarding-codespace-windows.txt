@@ -1,0 +1,138 @@
+notes
+
+windows os level notifications, etc will not be shared through zoom
+
+screen captrue share on windows -
+    win + shift + s -
+    control + v at the zoom chat
+
+copy and paste -
+    from zoom windows on my mac - use control + c or v -
+    from my mac - use command + c or v
+
+teamviewer - screen share for administrator access and windows os level work -
+    i download teamviewer for mac - login with yoon.cs.tutor -
+    receiving end download teamviewer -
+    i click sessions -  new sessions - share the session id -
+    enter the sessions id from teamviewer
+
+right click run as administrator - i have no control over those apps over zoom
+
+--------------------------------------------
+
+onboarding windows
+
+0 zoom install
+winget install --id Google.Chrome -e --source winget
+Start-Process zoom
+1 i share a zoom link through zoom chat
+2 enter the zoom room
+3 share screen - share zoom windows - share toolbars and notifications check
+4 share mouse control and clip board
+5 chrome install
+winget install --id Google.Chrome -e --source winget
+Start-Process chrome
+6 teamviewer setup - manual at the top
+winget install --id TeamViewer.TeamViewer -e --source winget
+Start-Process TeamViewer
+7 command prompt open as administrator - right click
+8 install git, github, and powershell - command prompt
+winget install --id Git.Git -e --source winget
+winget install --id GitHub.cli -e --source winget
+winget install --id Microsoft.PowerShell -e --source winget
+1 installation integrity check - open powershell as administrator - right click
+git --version
+gh --version
+pwsh --version
+
+0 codespace - from main of my public github repository - using personal github account
+	https://github.com/cs-yoon-ai/onboarding-codespace
+or
+0 create a folder at an adequate directory - pwd ls cd mkdir rmdir rm
+0 github clone onboarding from the folder
+cd [folder path]
+git clone https://github.com/cs-yoon-ai/onboarding-cross
+0 init push to personal private github repository
+/manuals/github-git/github-git-workflows/github-git-workflows-codespace.txt
+/manuals/github-git/github-ssh-key/github-ssh-key-linux.txt
+0 code space - from main of the personal repository
+
+1 inside the codespace vs-code
+2 shift + command + x
+3 live share
+4 install live share - microsoft
+(already signed in with the github account)
+8 shift + command + p
+9 type live share: start collaboration session (share)
+10 shift + command + p
+11 type live share: copy collaboration link
+12 send the link
+13 paste the link at a web browser - better to open in vs code ide
+14 command (or control) + shift + p
+15 type live share: share terminal
+7 note that all python, c, and java are managed by conda
+8 docker container inside test - codespace
+pwd
+ls
+conda info --envs
+which python
+python --version
+which javac
+javac -version
+which gcc
+gcc --version
+which gdb
+gdb --version
+git --version
+gh --version
+apt install vim
+pip install requests
+wget https://www.google.com
+curl https://www.github.com
+
+1 vs-code - file - autosave - click
+8 command (or control) + shift + p
+9 type live share: start collaboration session (share)
+10 sign in when prompted
+12 command (or control) + shift + p
+13 type live share: copy collaboration link
+14 share the link through zoom chat
+15 chrome paste url
+15 open in visual studio desktop
+10 command (or control) + shift + p
+11 type live share: share terminal - read write
+
+(do the following through shared screen teamviewer or zoom)
+python program test
+0 open a python file
+1 command (or control) + shift + p
+2 python: select interpreter
+3 choose python 3.11.15 (cs-project-docker) /opt/conda/envs/cs-project-docker/bin/python
+4 run python click the ▷ button at the top right
+5 debug pyton - set break points - command (or control) + shift + d -
+    click run and debug -
+    select appropriately
+
+ollama llm test
+/ai/chat-ollama-openai.py - manual at the bottom of the python program
+
+java program test
+0 open a java file
+1 let vs-code automatically load java extension specified at .devcontainer/devcontainer.json
+2 run java at the top right ▷
+3 debug java at the top right ▷ - set breakpoints
+
+c program test
+0 open a c file - compile and run with -g for debugging
+1 from the root of the project
+mkdir -p c/c-executables
+2 gcc -g c/hello-world-for.c -o c/c-executables/hello-world-for
+./c/c-executables/hello-world-for
+3 debug - set breakpoints -
+       command (or control) + shift + d -
+       run and debug ▷ c/c++:... ∨ - click ∨ -
+       choose c/c++:gcc build and debug active file -
+       click run and debug ▷
+
+git-github workflow for codespace
+/manuals/github-git/github-git-workflows/github-git-workflows-codespace.txt

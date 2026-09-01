@@ -1,0 +1,80 @@
+--------------------------------------------------------------
+create a folder where executables of .c files will be saved
+cd c
+mkdir c-executables
+
+compile .c and run the executable
+cc -O0 -g hello-world-for.c -o c-executables/hello-world-for
+./c-executables/hello-world-for
+
+--------------------------------------------------------------
+
+clion jetbrains - debugger and project setting
+
+0 both umbrella CMakeLists.txt and project CMakeLists.txt must exist -
+    onboarding-[mac, ms, or linux]/images/c-images/i-0.jpeg
+1 load the project as CMake Project -
+    onboarding-[mac, ms, or linux]/images/c-images/i-1.jpeg
+    (if the alert is not present, delete .idea at the root of the project then restart clion)
+2 settings - build, execution, deployment - toolchains and cmake -
+    onboarding-[mac, ms, or linux]/images/c-images/i-[2 and 3].jpeg
+2 run - edit configurations - + - cmake application -
+    onboarding-[mac, ms, or linux]/images/c-images/i-4.jpeg
+4 run the debugger -
+    onboarding-[mac, ms, or linux]/images/c-images/i-5.jpeg
+
++
+open intellij from docker for easier debugging
+
+codespace github - debugger and project setting
+
+0 both umbrella CMakeLists.txt and project CMakeLists.txt must exist -
+    onboarding-[mac, ms, or linux]/images/c-images/i-10.jpeg
+1 command (or control) + shift + p - type cmake: configure - select GCC 13.3.0 x86_64-linux-gnu
+    onboarding-[mac, ms, or linux]/images/c-images/i-[11 and 12].jpeg
+2 command (or control) + shift + p - type cmake: build - select C/C++: gcc-13 build and debug active file
+    onboarding-[mac, ms, or linux]/images/c-images/i-[13 and 14].jpeg
+3 run the debugger -
+    onboarding-[mac, ms, or linux]/images/c-images/i-15.jpeg
+
+
+--------------------------------------------------------------
+
+vs-code miscrosoft + docker project setting
+
+0 open the project in vs code
+1 make sure that
+    onboarding-mac/.devcontainer/devcontainer.json exists
+2 command (or control) + shift + x
+3 type dev containers and remote development extensions by microsoft
+4 command (or control) + shift + p
+5 type dev containers: reopen in container
+6 vs code will reopen using the container
+7 note that all python, c, and java are managed by conda
+8 inside the container
+pwd
+ls
+which python
+python --version
+which javac
+javac -version
+which gcc
+gcc --version
+which gdb
+gdb --version
+9 to rebuild docker after changes
+10 command (or control) + shift + p
+11 type dev containers: rebuild container
+or dev containers: rebuild and reopen in container
+
+c
+
+0 open a c file - compile and run with -g for debugging
+1 from the root of the project
+    mkdir -p c/c-executables
+2 gcc -g c/hello-world-for.c -o c/c-executables/hello-world-for
+./c/c-executables/hello-world-for
+3 place breakpoints on the c file
+4 click debug c++/c file or run c++/c file at the top right
+
+--------------------------------------------------------------

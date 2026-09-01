@@ -1,0 +1,41 @@
+codespace
+
+0 zoom screen share + remote + clipboard sharing enabled
+
+1 codespace - from main of my public github repository - using personal github account
+	https://github.com/cs-yoon-ai/onboarding-codespace
+or
+1 create a folder at an adequate directory - pwd ls cd mkdir rmdir rm
+github clone onboarding from the folder
+cd [folder path]
+git clone https://github.com/cs-yoon-ai/onboarding-cross
+2 github code space - init push to other github repository
+/manuals/github-git/github-git-workflows/github-git-workflows-codespace.txt
+/manuals/github-git/github-ssh-key/github-ssh-key-linux.txt
+3 code space - from main of the personal repository
+1 the green <> code button click
+1 codespaces click
+1 create codespace on main
+1 vs code - code space
+4 shift + command + x
+5 live share
+6 install live share - microsoft
+(already signed in with the github account)
+7 shift + command + p
+8 live share: start collaboration session (share)
+9 shift + command + p
+10 live share: copy collaboration link
+11 send the link
+12 paste the link at a web browser - better to open in vs code ide
+13 command (or control) + shift + p
+14 live share: share terminal
+15 command (or control) + shift + p
+16codespaces: rebuild container
+(
+code --install-extension ms-vscode.cpptools@1.33.4 --force
+command (or control) + shift + p
+developer: reload window
+) <-- fixes vs code debugger problem
+
+git-github workflow for codespace
+/manuals/github-git/github-git-workflows/github-git-workflows-codespace.txt

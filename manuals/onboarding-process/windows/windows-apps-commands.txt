@@ -1,0 +1,16 @@
+terminal commands
+hostname
+ipconfig
+powershell
+docker desktop restart
+
+
+copy and paste -
+    from zoom windows on my mac - use control + c or v -
+    from my mac - use command + c or v
+
+screen shot share on windows -
+    win + shift + s -
+    control + v at the zoom chat
+
+

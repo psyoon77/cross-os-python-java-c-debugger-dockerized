@@ -1,0 +1,53 @@
+0 create github account
+
+1 cd ~/.ssh
+
+2 ssh-keygen -t ed25519 -C "[comment - name of the key recommended]" -f ~/.ssh/id_ed25519_[name of the key]
+	add passphrase for the key when prompted
+
+3 sudo vim config - add the following -
+Host *
+  IgnoreUnknown UseKeychain
+  GSSAPIAuthentication no
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentitiesOnly yes
+  ControlMaster no
+  ControlPath none
+  ControlPersist no
+
+Host github-[name of the key]
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_[name of the key]
+
+4 start ssh agent
+eval "$(/usr/bin/ssh-agent -s)"
+
+5 add key to apple keychain
+/usr/bin/ssh-add --apple-use-keychain ~/.ssh/id_ed25519_[name of the key]
+
+6 copy the public ssh key
+cat ~/.ssh/id_ed25519_[name of the key].pub
+
+7 upload the public ssh key on the github account
+settings - ssh and gpg keys - ssh keys - new ssh key -
+	name it [name of the key recommended] - paste the public key
+
+8 test
+/usr/bin/ssh-add -l
+/usr/bin/ssh -T git@github-[name of the key]
+
+8 github cli authentication
+gh auth status
+gh auth logout
+gh auth login
+choose github.com
+choose ssh for git operations
+choose the correct public ssh key that is on the github account
+press enter without any input - title for your ssh key:
+choose login with a web browser
+copy the one-time code
+press enter
+follow the gui github authentication process
+gh auth status

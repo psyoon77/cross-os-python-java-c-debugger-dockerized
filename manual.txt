@@ -1,0 +1,191 @@
+--------------------------------------------------------------
+
+create .env locally 
+github codepace - open from main branch - .devecontainer is responsible for linking Dockerfile - ollama excluded
+inside the container, apt, pip, wget, curl, etc work well
+
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+git github template
+git checkout -b [name-of-a-new-branch]
+git add -A
+git commit -m "[commit message]"
+git push -u origin [name-of-a-new-branch]
+gh pr create --base main --head [name-of-a-new-branch] --title "[pr title]" --body "[pr body message]"
+gh pr merge --merge --delete-branch
+git checkout main
+git pull origin main
+
+(when pulling - stash local changes before the pull)
+
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+docker application start on Mac first
+
+(from the root of the project where docker files are located)
+docker enter
+docker compose exec cs-project-docker bash
+
+docker rebuild + enter fast or initial build + enter
+docker compose up -d --build
+docker compose exec cs-project-docker bash
+
+docker rebuild + enter clean
+docker compose down --volumes --remove-orphans
+docker builder prune -af
+docker compose build --no-cache
+docker compose up -d
+docker compose exec cs-project-docker bash
+
+docker reset
+docker system prune -a --volumes -f
+
+docker clean reset
+docker rm -f $(docker ps -aq) 2>/dev/null
+docker rmi -f $(docker images -aq) 2>/dev/null
+docker volume rm $(docker volume ls -q) 2>/dev/null
+docker network prune -f
+docker builder prune -a -f
+
+verify inside docker
+pwd
+which python
+python --version
+which pip
+pip --version
+which javac
+javac -version
+which gcc
+gcc --version
+run java c python ai code
+
+--------------------------------------------------------------
+
+conda miniconda 
+
+conda env list
+conda activate [env name]
+conda deactivate
+
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+code space
+command (or control) + shift + p
+type codespaces: rebuild container
+choose rebuild or full rebuild
+
+--------------------------------------------------------------
+
+vs-code miscrosoft + docker project setting
+
+0 open the project in vs code
+1 make sure that 
+    onboarding-mac/.devcontainer/devcontainer.json exists
+2 command (or control) + shift + x 
+3 type dev containers and remote development extensions by microsoft
+4 command (or control) + shift + p
+5 type dev containers: reopen in container
+6 vs code will reopen using the container
+7 note that all python, c, and java are managed by conda
+8 inside the container 
+pwd
+ls
+which python
+python --version
+which javac
+javac -version
+which gcc
+gcc --version
+which gdb
+gdb --version
+9 to rebuild docker after changes
+10 command (or control) + shift + p
+11 type dev containers: rebuild container
+or dev containers: rebuild and reopen in container
+
+--------------------------------------------------------------
+
+vs code + docker debug and run python, c, and java
+
+python
+
+0 open a python file
+1 command (or control) + shift + p
+2 type python: select interpreter
+3 choose the conda
+4 click run python at the top right
+5 debug command (or control) + shift + p
+    click run and debug
+    select appropriately
+
+java
+
+0 open a java file
+1 let vs code load java extension specified at .devcontainer/devcontainer.json
+2 click run java or debug java at the top right
+
+c
+
+0 open a c file - compile and run with -g for debugging
+1 from the root of the project
+    mkdir -p c/c-executables
+2 gcc -g c/hello-world-for.c -o c/c-executables/hello-world-for
+./c/c-executables/hello-world-for
+3 place breakpoints on the c file
+4 click debug c++/c file or run c++/c file at the top right
+
+--------------------------------------------------------------
+
+vs code - live share and zoom
+
+mac 
+
+0 zoom screen share + remote + clipboard sharing enabled
+1 vs code - docker container project open
+2 command (or control) + shift + x
+3 live share
+4 install live share - microsoft
+5 command (or control) + shift + p
+6 type live share: sign in
+7 sign in with github account
+8 command (or control) + shift + p
+9 type live share: start collaboration session (share)
+10 command (or control) + shift + p
+11 type live share: copy collaboration link
+12 send the link
+13 command (or control) + shift + p
+14 type live share: share terminal
+15 better to open in vs code ide
+
+
+codespace
+
+0 zoom screen share + remote + clipboard sharing enabled
+1 from codespace - main of the github repository
+2 command (or control) + shift + x
+3 live share
+4 install live share - microsoft
+(already signed in with the github account)
+8 command (or control) + shift + p
+9 type live share: start collaboration session (share)
+10 command (or control) + shift + p
+11 type live share: copy collaboration link
+12 send the link
+13 paste the link at a web browser - better to open in vs code ide
+14 command (or control) + shift + p
+15 type live share: share terminal
+
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+github
+manuals/github-ssh-key
+
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+onboarding process
+manuals/onboarding-process

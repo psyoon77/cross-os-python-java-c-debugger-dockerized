@@ -1,0 +1,43 @@
+docker start first
+sudo systemctl start docker (linux)
+open -a Docker (mac)
+docker desktop start (windows)
+
+------------------------------------------------------------
+
+(from the root of the project where docker files are located)
+docker enter
+docker compose exec cs-project-docker bash
+
+docker rebuild + enter fast or initial build + enter
+docker compose up -d --build
+docker compose exec cs-project-docker bash
+
+docker rebuild + enter clean
+docker compose down --volumes --remove-orphans
+docker builder prune -af
+docker compose build --no-cache
+docker compose up -d
+docker compose exec cs-project-docker bash
+
+docker reset
+docker system prune -a --volumes -f
+
+docker clean reset
+docker rm -f $(docker ps -aq) 2>/dev/null
+docker rmi -f $(docker images -aq) 2>/dev/null
+docker volume rm $(docker volume ls -q) 2>/dev/null
+docker network prune -f
+docker builder prune -a -f
+
+verify inside docker
+pwd
+which python
+python --version
+which pip
+pip --version
+which javac
+javac -version
+which gcc
+gcc --version
+run java c python ai code

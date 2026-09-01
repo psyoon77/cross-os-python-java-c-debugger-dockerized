@@ -1,0 +1,195 @@
+--------------------------------------------
+notes
+
+zoom screen share - administrator access, windows os level notifications, etc are not accessible
+
+teamviewer screen share - administrator access, windows os level notifications, etc are accessible -
+    i download teamviewer for mac - login with yoon.cs.tutor -
+    download teamviewer for linux -
+    0 (standard flow)
+    open teamviwer - remoate support - teamviwer id - allow remote control -
+    send id and password to me through zoom chat -
+    i enter id and password from my teamviewer
+    1 (finicky on linux)
+    i click sessions -  new sessions - share the session id -
+    enter the session id from teamviewer
+
+screen captrue share on windows -
+    win + shift + s -
+    control + v at the zoom chat
+
+copy and paste -
+    from zoom windows on my mac - use control + c and v -
+    from my mac - use command + c and v
+
+    copy and paste for linux terminal copy -
+        control + shift + c and v
+
+--------------------------------------------
+--------------------------------------------
+
+onboarding linux
+
+0 terminal open (copy or paste - control + shift + c or v)
+1 apt update and upgrade
+sudo apt update
+sudo apt upgrade -y
+2 zoom install
+wget https://zoom.us/client/latest/zoom_amd64.deb
+sudo apt install ./zoom_amd64.deb
+zoom (open zoom through terminal command)
+(double check url and file name - wget download at the current directory - rm delete file later)
+3 i share a zoom link through zoom chat
+4 enter the zoom room
+5 share screen
+6 share mouse control and clip board
+7 chrome install
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+google-chrome (open zoom through terminal command)
+(double check url and file name - wget download at the current directory - rm delete file later)
+8 teamviewer setup - manual at the top
+wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+sudo apt install ./teamviewer_amd64.deb
+teamviewer (open teamviewer through terminal command)
+(double check url and file name - wget download at the current directory - rm delete file later)
+9 apt install
+sudo apt install -y git vim curl wget openssh-client ca-certificates gnupg
+10 install github gh
+type -p curl >/dev/null || sudo apt install -y curl
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+sudo apt update
+sudo apt install -y gh
+11 install vs-code
+wget -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+sudo apt install ./code.deb
+code (vs-code run through terminal command)
+12 install docker, etc
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt remove -y $pkg; done
+sudo apt install -y ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+13 installation integrity check
+apt --version
+git --version
+gh --version
+vim --version
+curl --version
+wget --version
+ssh -V
+code --version
+docker --version
+docker compose version
+14 docker commands
+sudo systemctl start docker
+sudo systemctl status docker
+docker ps
+sudo systemctl enable docker (docker start automatically at boot)
+15 create a folder at an adequate directory - pwd ls cd mkdir rmdir rm
+16 github clone onboarding from the folder
+cd [folder path]
+git clone https://github.com/cs-yoon-ai/onboarding-cross
+
+
+17 vs-code open the cloned onboarding-cross folder
+(command (or control) + shift + n - new vs-code window open)
+18 vs-code extensions local install - command (or control) + shift + x
+docker
+dev containers
+container tools
+live share
+remote development
+19 command (or control) + shift + p
+20 dev containers: reopen in container
+21 vs code will reopen using the container - click ⓘ connecting to dev container (show log)
+22 note that all python, c, and java are managed by conda
+23 docker container inside test
+pwd
+ls
+conda info --envs
+which python
+python --version
+which javac
+javac -version
+which gcc
+gcc --version
+which gdb
+gdb --version
+git --version
+gh --version
+apt install vim
+pip install requests
+wget https://www.google.com
+curl https://www.github.com
+(
+code --install-extension ms-vscode.cpptools@1.33.4 --force
+command (or control) + shift + p
+developer: reload window
+) <-- fixes vs code debugger problem
+
+24 vs-code - file - autosave - click
+25 command (or control) + shift + p
+26 live share: start collaboration session (share)
+27 sign in when prompted
+28 command (or control) + shift + p
+29 live share: copy collaboration link
+30 share the link through zoom chat
+31 chrome paste url
+32 open in visual studio desktop
+33 command (or control) + shift + p
+34 live share: share terminal - read write
+
+(do the following through shared screen teamviewer or zoom)
+
+python program test
+0 open a python file
+1 command (or control) + shift + p
+2 python: select interpreter
+3 choose python 3.11.15 (cs-project-docker) /opt/conda/envs/cs-project-docker/bin/python
+4 run python click the ▷ button at the top right
+5 debug pyton - set break points - command (or control) + shift + d -
+    click run and debug -
+    select appropriately
+
+ollama llm test
+0 /ai/chat-ollama-openai.py - manual at the bottom of the python program
+(both dockers must be active to run chat-ollama-openai.py)
+
+java program test
+0 open a java file
+1 let vs-code automatically load java extension specified at .devcontainer/devcontainer.json
+2 run java at the top right ▷
+3 debug java at the top right ▷ - set breakpoints
+
+c program test
+0 open a c file - compile and run with -g for debugging
+1 from the root of the project
+mkdir -p c/c-executables
+2 gcc -g c/hello-world-for.c -o c/c-executables/hello-world-for
+./c/c-executables/hello-world-for
+3 debug - set breakpoints -
+       command (or control) + shift + d -
+       run and debug ▷ c/c++:... ∨ - click ∨ -
+       choose c/c++:gcc build and debug active file -
+       click run and debug ▷
+
+github-git
+0 github setup
+/manuals/github-git/github-ssh-key/github-ssh-key-linux.txt
+1 git initial commit or continuous development
+/manuals/github-git/github-git-workflows-cross.txt
+
+vs-code docker info 
+0 vs-code - to rebuild docker
+1 command (or control) + shift + p
+2 dev containers: rebuild container
+
